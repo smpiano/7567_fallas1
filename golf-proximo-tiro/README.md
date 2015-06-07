@@ -7,8 +7,10 @@ Aunque también se podría calcular usando yardas y miles per hour.
 
 ## Instalacion
 
-### Bajarse el Leiningen[http://leiningen.org/]
+### Bajarse el Leiningen
+[https://github.com/technomancy/leiningen]
  Es como un maven pero para Clojure.
+ Estar seguros de tener version mayor a 1.x (los tests no funcionan en esta version)
 
 ### Dentro del proyecto hacer
 ```
