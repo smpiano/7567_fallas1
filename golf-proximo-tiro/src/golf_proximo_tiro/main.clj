@@ -9,6 +9,17 @@
 (defn -main
 	"Application entry point"
 	[& args]
-	(println (str "Hello, " (first args) "!"))
-	(println (core/next-shoot-yrd-mph 175 101))
+	(with-open [rdr (clojure.java.io/reader "src/golf_proximo_tiro/banner.txt")]
+ 		(doseq [line (line-seq rdr)]
+			(println line)))
+	(println "\n\nBienvenido al Caddy master!\n\nIngrese la distancia en (yardas): \n")
+	(def dist (read-line))
+	(println (str " -> La distancia ingresada es de: " dist " yardas."))
+	(println "\nIngrese la velocidad del viento en (mph): \n")
+	(def wind (read-line))
+	(println (str " -> La velocidad del viento ingresada es de: " wind " mph."))
+	(println "\nTu palo recomendado sería el: \n")
+	(def dist (Integer. (re-find #"\d+" dist)))
+	(def wind (Integer. (re-find #"\d+" wind)))
+	(println (core/next-shoot-yrd-mph dist wind))
 )
