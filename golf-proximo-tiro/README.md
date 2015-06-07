@@ -12,9 +12,14 @@ Aunque también se podría calcular usando yardas y miles per hour.
 
 ### Dentro del proyecto hacer
 ```
-$ lein repl
+$ lein deps
 ```
  Esto nos va a bajar las dependencias que necesitamos para correr el proyecto.
+ 
+ Si queremos ejecutar bajo la misma session y probar code
+ ```
+$ lein repl
+```
  De acá salir con Ctrl-D
 
 
@@ -22,6 +27,11 @@ $ lein repl
 
 ```
 $ lein run
+```
+
+Me funciona con éste por el soporte en stdin
+```
+$ lein trampoline run
 ```
 
 # Faltantes
