@@ -36,6 +36,11 @@ Me funciona con éste por el soporte en stdin
 $ lein trampoline run
 ```
 
+Correr los test con
+```
+$ lein test
+```
+
 # Faltantes
 
 - [x] que calcule los datos de un organizmo oficial
@@ -44,3 +49,5 @@ $ lein trampoline run
 - [ ] Calcule en sistema MKS
 - [x] Hacer el programa interactivo
 - [ ] Tests
+ - [x] Hacer funcar los tests
+ - [ ] Cobertura
