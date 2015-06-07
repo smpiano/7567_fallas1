@@ -1,4 +1,6 @@
-(ns golf-proximo-tiro.core)
+(ns ^{:doc "Calculos necesarios para golf-proximo-tiro"
+       :author "Sergio Piano"}
+	golf-proximo-tiro.core)
 
 ;here begins the code to proximity
 
@@ -59,8 +61,3 @@
 			)
 		)
 	)
-
-(defn hello []
-  (println "Hello world!")
-  (println (next-shoot-yrd-mph 175 101))
-)

@@ -30,4 +30,5 @@ $ lein run
    Los datos fueron extraidos de [http://www.golfwrx.com/62549/how-far-should-you-hit-your-golf-clubs/]
 - [x] Calcule en yardas y mph
 - [ ] Calcule en sistema MKS
+- [ ] Hacer el programa interactivo
 - [ ] Tests
