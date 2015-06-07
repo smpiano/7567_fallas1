@@ -2,5 +2,5 @@
   (:use [golf-proximo-tiro.core])
   (:use [clojure.test]))
 
-(deftest test-irons ;; FIXME: write
-  (is (= (count irons) 8))
+(deftest test-irons
+  (is (= (count irons) 13)))
