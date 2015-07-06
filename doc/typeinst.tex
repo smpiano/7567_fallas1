@@ -76,16 +76,24 @@ Este trabajo pretende describir la realización de un Sistema Experto de ayuda p
 \section{Introducción}
 
 Desde que las computadoras forman parte de la vida cotidiana de las personas, se ha mantenido en el imaginario de muchos, intentar darle a las computadoras un cierto grado de inteligencia para que puedan hacer el trabajo por nosotros.\\
+
+El campo de la inteligencia artificial ha crecido rápidamente mientras que el poder de computo se incrementaba. La inteligencia artificial hace referencia a la habilidad de llevar a cabo las funciones inteligentes del cerebro humano. En particular algunas formas de razonamiento, algo de aprender y mejoras generales a lo largo del tiempo. Los usos de la IA han variado el mayor uso, por ahora son en computo y robótica. Forman una parte integran en el reconocimiento óptico de caracteres moderno y software de reconocimiento del habla y se usan vastamente en robótica. Tienen aplicaciones muy dispersas a lo largo de lo militar. El uso de IA se ha extendido a las ciencias sociales, incluyendo estudios de negocio. El uso de Redes Neuronales Artificiales (RNA) y algoritmos genéticos se están convirtiendo en algo muy difundido, particularmente en los campos de estudio de mercado y pronósticos.\cite{IN1}
+Los sistemas expertos pueden ser considerados un subconjunto de IA. Delurgio en 1998 hace una clara distinción entre sistemas convencionales y sistemas expertos. Mantiene que un convencional involucra al investigador queriendo crear un sistema que trabajo con tareas interesantes y difíciles a las que el humano no esta acostumbrado, o sea, no importa como se resuelve el programa: mientras se resuelva. El experto trata de ganar un entendimiento de como los humanos resuelven programas y después usa la computadora para explicar y predecir el comportamiento. En la practica muchos sistemas contienen elementos de ambos. De ese modo, muchos sistemas tienen aspectos de expertos pero terminan recayendo en cálculos numéricos de un sistema convencional.
+La aparición de expertos o cuasi expertos es importante para educadores de todas las áreas. Las ventajas de los sistemas expertos incluyen la habilidad de dar consejo experto a no expertos, asistir a expertos en resolver problemas y de actuar como herramienta de enseñanza a no expertos\cite{IN2}. Para educadores, la cuestión final es muy beneficiante. Un sistema experto bien construido puede formar una gran herramienta de aprendizaje y entrenamiento.[1]
+
 Un sistema experto no da una verdadera respuesta a esta ilusión, pero intenta acercarse, basándose en el conocimiento de un experto; mediante un buen diseño de la base de conocimientos y un correcto motor de inferencias para operar con dicha información, llegaremos a la detección de resoluciones para un problema específico.\\
 Estas son aplicaciones que contienen gran cantidad de conocimiento sobre su especialidad. Utilizan reglas empíricas o heurísticas, para enfocar los aspectos más importantes de problemas determinados y manipular descripciones simbólicas a fin de razonar con el conocimiento que tienen.\cite{Samper} \\ 
 La función de un sistema experto es desarrollar trabajos similares a los que desarrollaría un especialista en un área determinada, que denominaremos dominio. La idea no es sustituir a los expertos, sino que estos sistemas sirvan de apoyo a los especialistas en un dominio de aplicación específico.
 Los conocimientos que un sistema experto trata de modelar, son las deducciones que un experto utiliza en su proceso de diagnóstico.\\
 
+
+
+
 \section{Estado de la Cuestión}
 
 Como antecedentes del uso de redes neuronales y sistemas expertos aplicados al deporte podemos señalar varios casos de distinto tipo. La mayoría centrados en fútbol, pero ninguno en golf.
-Por ejemplo, se ha visto un sistema experto y difuso que evalua a talentos jóvenes en ayuda de los scouts. Se basa en conocimientos de varios expertos de muchos deportes distintos, muchas pruebas de capacidades motoras, características morfológicas y pruebas funcionales que fueron cuantificados dependiendo de su importancia para cada deporte.\cite{EC1}
-El sistema desarrollado ha dado predicción de aceptabilidad y propuesta para el deporte más apto a la persona testeada. Algunos resultados obtenidos por la investigación se usaron para el desarrollo de un experto aún más especifico para la predicción y asesoramiente de performance en basketball\cite{EC2}
+Por ejemplo, se ha visto un sistema experto y difuso que evalúa a talentos jóvenes en ayuda de los Scouts. Se basa en conocimientos de varios expertos de muchos deportes distintos, muchas pruebas de capacidades motoras, características morfológicas y pruebas funcionales que fueron cuantificados dependiendo de su importancia para cada deporte.\cite{EC1}
+El sistema desarrollado ha dado predicción de aceptabilidad y propuesta para el deporte más apto a la persona testeada. Algunos resultados obtenidos por la investigación se usaron para el desarrollo de un experto aún más especifico para la predicción y asesoramiento de performance en basketball\cite{EC2}
 
 También, se han propuesto sistemas expertos para estudiar la calidad de un arquero de fútbol y compararlos con sus colegas.\cite{EC3}
 
@@ -207,13 +215,39 @@ Para la resolución del problema se considerarán las siguientes hipótesis con 
 
 \section{Conclusiones}
 
+Ciertos deportes, en especial aquellos individuales, donde no se encuentran muchas variables, como ser
+la interferencia de otro jugador aplicando una estrategia contrapuesta a la nuestra, son un buen lugar
+donde aplicar soluciones informáticas en beneficio del jugador. En particular soluciones relacionadas a
+los sistemas inteligentes, especialmente sistemas expertos.\\
+Esta experiencia demuestra que con la aplicación de algunas reglas simples se puede mejorar el desempeño
+de una forma notable, que al humano le llevaría mucho tiempo adquirir. La experiencia obtenida del sistema experto, le ahorraría al jugador muchas horas de practica.\\
+Este sistema, como la mayoría de los sistemas expertos, mostró tener mayor complejidad a la hora de  obtener y modelar los conocimientos que a la hora de implementar el software propiamente dicho. En este aspecto, la metodología IDEAL, mostró ser de gran ayuda para la realización del sistema.
+
 \section{Futuras Lineas de investigación}
 
+\subsection{Aplicación automática de la base de conocimiento}
+Como se ha dicho con anterioridad, una forma de optimizar los resultados obtenidos por esta herramienta,
+seria ampliar la base de conocimientos. Se podría optimizar la base de conocimiento, generando una en particular para cada jugador distinto. Llevar un registro de los golpes dados por este, 
+así como su evolución, para elegir el palo mas adecuado en cada tiro.\\
+El solo echo de generar una base de conocimientos particulares de cada golfista, ayudaría a predecir con 
+mayor exactitud la distancias para cada palo. Este proceso incluso podría ser actualizado en tiempo real por el usuario después de obtener una desciño y realizar el disparo.\\
+
+\subsection{Generar Sistema embebido}
+
+Se podría generar un sistema embebido, para instalarlo en los carros de golf de los distintos campos. Estos carros ya cuentan con distintos sistemas de información del clima, detalles del campo , entre otras herramientas tecnológicas. 
+
+\subsection{GPS y mapas de los hoyos}
+
+Esto podría hacer que la distancia al hoyo sea calculada automáticamente, como también facilitar la ampliación automática de la base de conocimiento, ya que agregando una interfaz amigable, le seria muy fácil al usuario cargar sus tiros.
 
 
 \begin{thebibliography}{7}
 
-  \bibitem{Samper} SAMPER Márquez, Juan José. Sistemas Expertos: El conocimiento al poder.
+  \bibitem{IN1} Using Expert Systems and Artificial Intelligence For Real
+    Estate Forecasting, Peter Rossini, 2000
+
+  \bibitem{IN2} DeLurgio, Stephen A., Jr. (1998), Forecasting Principles and
+    Applications. New York: Irwin/McGraw-Hill. 
 
   \bibitem{EC1} Identification of  sport talents using a web-oriented
     expert  system  with  a fuzzy module, Vladan  Papić, Vladimir Pleština \&
