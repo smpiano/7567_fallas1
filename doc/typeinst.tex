@@ -53,7 +53,7 @@
 
 % the affiliations are given next; don't give your e-mail address
 % unless you accept that it will be published
-\institute{Sistemas Automaticos de Deteccion de Fallas, Ingenieria en Informatica,\\
+\institute{Sistemas Automáticos de Detección de Fallas, Ingeniería en Informática,\\
 Universidad de Buenos Aires, Argentina\\
 \mailsa\\
 \mailsb\\
@@ -73,12 +73,12 @@ Universidad de Buenos Aires, Argentina\\
 
 
 \begin{abstract}
-Este trabajo pretende describir la realización de un Sistema Experto de ayuda para jugadores de Golf, aplicando la metodología IDEAL, considerándolo un sistema de asistencia, capaz de emular las decisiones que tomaría un caddy experto a partir de su posición en la cancha  y las condiciones del viento. Para el desarrollo de este se usará Clojure como motor de inferencia.
+Este trabajo pretende describir la realización de un Sistema Experto de ayuda para jugadores de Golf, aplicando la metodología IDEAL, considerándolo un sistema de asistencia, capaz de emular las decisiones que tomaría un Caddy experto a partir de su posición en la cancha  y las condiciones del viento. Para el desarrollo de este se usará Clojure como motor de inferencia.
 \keywords{IDEAL, Sistema Experto, Golf, sistema de asistencia, Caddy, Clojure}
 \end{abstract}
 
 
-\section{Introduccion}
+\section{Introducción}
 
 Desde que las computadoras forman parte de la vida cotidiana de las personas, se ha mantenido en el imaginario de muchos, intentar darle a las computadoras un cierto grado de inteligencia para que puedan hacer el trabajo por nosotros.\\
 Un sistema experto no da una verdadera respuesta a esta ilusión, pero intenta acercarse, basándose en el conocimiento de un experto; mediante un buen diseño de la base de conocimientos y un correcto motor de inferencias para operar con dicha información, llegaremos a la detección de resoluciones para un problema específico.\\
@@ -86,24 +86,24 @@ Estas son aplicaciones que contienen gran cantidad de conocimiento sobre su espe
 La función de un sistema experto es desarrollar trabajos similares a los que desarrollaría un especialista en un área determinada, que denominaremos dominio. La idea no es sustituir a los expertos, sino que estos sistemas sirvan de apoyo a los especialistas en un dominio de aplicación específico.
 Los conocimientos que un sistema experto trata de modelar, son las deducciones que un experto utiliza en su proceso de diagnóstico.\\
 
-\section{Estado de la Cuestion}
+\section{Estado de la Cuestión}
 
 \section{Problema Planteado}
-\subsection{Eleccion del dominio de aplicacion}
+\subsection{Elección del dominio de aplicación}
 Iniciaremos analizando el ámbito de un sistema experto, dado que si un problema está adecuadamente resuelto por métodos tradicionales como la programación lineal, es en vano intentar una metodología de Sistema Experto. Por el contrario, si un problema no está bien resuelto, o deben considerarse cuantiosos parámetros de naturaleza simbólica que son difíciles de tener en cuenta en un modelo numérico, entonces se puede percibir que sería correcto aplicar una metodología de Sistema Experto.\\
 Para realizar este tipo de sistemas es siempre necesario contar con una persona a la cual se pueda considerar un experto en el área, en este caso se trata de un golfista semi profesional y experimentado Caddy. Será el, quien nos nutra del conocimiento necesario para realizar la base de conocimiento necesaria para resolver el problema planteado.\\
 
-\section{Solucion Propuesta}
+\section{Solución Propuesta}
 \subsection{Elección del palo}
 Cuando el usuario, jugador de golf, en cuestión se encuentra en una posición de la cancha, listo para efectuar un tiro, el experto es quien aconsejara al usuario, con que palo es mejor efectuar dicho tiro. El experto escoge el palo adecuado en función de varios factores, los cuales afectan su decisión para lograr un mejor tiro.\\
-	Como existen distintas técnicas de juego, nuestro caddy experto tomará un aproach no conservador, es decir que siempre aconsejara el uso de un palo mediante el cual el usuario sea capaz de llegar al hoyo.
+	Como existen distintas técnicas de juego, nuestro Caddy experto tomará un enfoque no conservador, es decir que siempre aconsejara el uso de un palo mediante el cual el usuario sea capaz de llegar al hoyo.
 	
 \subsection{Retroalimentación}
-Como se trata de un deporte, donde el SE solo aconsejara al usuario con que palo tirar, y sera este al fin de cuentas quien realice el tiro, el SE debera ser constantemente alimentado con las estadisticas de tiro del jugador. Esto hara que las próximas decisiones tomadas por el SE tengan una mayor base de conocimiento con las cuales trabajar.\\
+Como se trata de un deporte, donde el SE solo aconsejara al usuario con que palo tirar, y sera este al fin de cuentas quien realice el tiro, el SE deberá ser constantemente alimentado con las estadísticas de tiro del jugador. Esto hará que las próximas decisiones tomadas por el SE tengan una mayor base de conocimiento con las cuales trabajar.\\
  
-\section{Caracterizacion del problema}
+\section{Caracterización del problema}
 \subsection{Participantes}
-\textbf{Usuario :} Será el jugador de golf, el cual consulta a su caddy con que palo tirar previo a cada tiro.\\
+\textbf{Usuario :} Será el jugador de golf, el cual consulta a su Caddy con que palo tirar previo a cada tiro.\\
 \textbf{Caddy :} Sera el SE, que tomara en cuenta todos los factores necesarios para aconsejar al jugador de la mejor manera.\\
 
 \subsection{Modelación del conocimiento}
@@ -153,7 +153,7 @@ Para este problema tenemos definido el siguiente conocimiento:\\
 
 Cabe destacar que en esta resolución del problema, no se tienen en cuenta todos los palos posibles sino aquellos mas usados y por lo tanto presentes en el bolso de cualquier golfista.\\
 \subsection{Conjunto de reglas}
-Este es el conjunto de reglas que se aplicara para la eleccion del palo, en el orden dado:
+Este es el conjunto de reglas que se aplicara para la elección del palo, en el orden dado:
 \begin{itemize}
 
 	\item Si GREEN $\Rightarrow$ P 
@@ -185,7 +185,7 @@ Este es el conjunto de reglas que se aplicara para la eleccion del palo, en el o
 \end{itemize}
 
 
-\subsection{Hipostesis}
+\subsection{Hipótesis}
 
 Para la resolución del problema se considerarán las siguientes hipótesis con respecto a los parámetros de entrada:\\
 \begin{itemize}
@@ -196,13 +196,13 @@ Para la resolución del problema se considerarán las siguientes hipótesis con 
 	\item WIND es un integer en el rango (-10, 10).
 	\item DIST es siempre un integer positivo.
 	\item Las distancias con cada palo se actualizarán en función del jugador.
-	\item No puede existir ningun palo cuya distacia sea $\leq$ 20
+	\item No puede existir ningún palo cuya distancia sea $\leq$ 20
 \end{itemize}
 
 
-\section{Concluciones}
+\section{Conclusiones}
 
-\section{Futuras Lineas de investigacion}
+\section{Futuras Lineas de investigación}
 
 
 
@@ -213,9 +213,9 @@ Para la resolución del problema se considerarán las siguientes hipótesis con 
 \end{thebibliography}
 
 
-\section*{Apendice: Glosario de terminos}
-Distintos terminos utilizados por el experto para la resolucion de este problema.\\
-\textbf{Caddy:} \textit{Persona que asiste a un golfista durante la práctica de su deporte. La asistencia proporcionada por el caddie incluye llevar la bolsa de palos del jugador, asesorarle sobre las condiciones de juego de la cancha, hacer recomendaciones sobre el palo a elegir para obtener una distancia o tipo de golpe deseados y dar apoyo moral al golfista.}\\
+\section*{Apéndice: Glosario de términos}
+Distintos términos utilizados por el experto para la resolución de este problema.\\
+\textbf{Caddy:} \textit{Persona que asiste a un golfista durante la práctica de su deporte. La asistencia proporcionada por el Caddy incluye llevar la bolsa de palos del jugador, asesorarle sobre las condiciones de juego de la cancha, hacer recomendaciones sobre el palo a elegir para obtener una distancia o tipo de golpe deseados y dar apoyo moral al golfista.}\\
 \textbf{Green:}  \textit{Una zona delimitada de unos 550 m² en promedio, en la que el terreno está muy bien alisado y la hierba es fina y muy corta, de 2,5 a 3,2 mm de altura, donde se encuentra el hoyo.\\
 Tee de Salida: Es un pedazo de cancha más elevada desde donde comienza el juego.}\\
 \textbf{Hierros:} \textit{Son los palos utilizados en el juego, excepto en el green y trampas de arena. Están numerados del 3 al 9.}\\
