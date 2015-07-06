@@ -1,0 +1,226 @@
+
+%%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the LaTeX source for the instructions to authors using
+% the LaTeX document class 'llncs.cls' for contributions to
+% the Lecture Notes in Computer Sciences series.
+% http://www.springer.com/lncs       Springer Heidelberg 2006/05/04
+%
+% It may be used as a template for your own input - copy it
+% to a new file with a new name and use it as the basis
+% for your article.
+%
+% NB: the document class 'llncs' has its own and detailed documentation, see
+% ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+
+\usepackage{url}
+\urldef{\mailsa}\path|pnavarro@fi.uba.ar,|
+\urldef{\mailsb}\path|alexing10@gmail.com,|
+\urldef{\mailsc}\path|smpiano@gmail.com,|    
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+% first the title is needed
+\title{Sistema Experto para Caddy de Golf}
+
+% a short form should be given in case it is too long for the running head
+\titlerunning{Sistema Experto para Caddy de Golf}
+
+% the name(s) of the author(s) follow(s) next
+%
+% NB: Chinese authors should write their first names(s) in front of
+% their surnames. This ensures that the names appear correctly in
+% the running heads and the author index.
+%
+\author{Patricio Navarro\and Alex Ingberg\and Matias Piano}
+%
+\authorrunning{Sistema Experto para Caddy de Golf}
+% (feature abused for this document to repeat the title also on left hand pages)
+
+% the affiliations are given next; don't give your e-mail address
+% unless you accept that it will be published
+\institute{Sistemas Automaticos de Deteccion de Fallas, Ingenieria en Informatica,\\
+Universidad de Buenos Aires, Argentina\\
+\mailsa\\
+\mailsb\\
+\mailsc\\
+\url{http://materias.fi.uba.ar/7567}}
+
+%
+% NB: a more complex sample for affiliations and the mapping to the
+% corresponding authors can be found in the file "llncs.dem"
+% (search for the string "\mainmatter" where a contribution starts).
+% "llncs.dem" accompanies the document class "llncs.cls".
+%
+
+\toctitle{Sistemas Expertos}
+\tocauthor{Caddy de Golf}
+\maketitle
+
+
+\begin{abstract}
+Este trabajo pretende describir la realización de un Sistema Experto de ayuda para jugadores de Golf, aplicando la metodología IDEAL, considerándolo un sistema de asistencia, capaz de emular las decisiones que tomaría un caddy experto a partir de su posición en la cancha  y las condiciones del viento. Para el desarrollo de este se usará Clojure como motor de inferencia.
+\keywords{IDEAL, Sistema Experto, Golf, sistema de asistencia, Caddy, Clojure}
+\end{abstract}
+
+
+\section{Introduccion}
+
+Desde que las computadoras forman parte de la vida cotidiana de las personas, se ha mantenido en el imaginario de muchos, intentar darle a las computadoras un cierto grado de inteligencia para que puedan hacer el trabajo por nosotros.\\
+Un sistema experto no da una verdadera respuesta a esta ilusión, pero intenta acercarse, basándose en el conocimiento de un experto; mediante un buen diseño de la base de conocimientos y un correcto motor de inferencias para operar con dicha información, llegaremos a la detección de resoluciones para un problema específico.\\
+Estas son aplicaciones que contienen gran cantidad de conocimiento sobre su especialidad. Utilizan reglas empíricas o heurísticas, para enfocar los aspectos más importantes de problemas determinados y manipular descripciones simbólicas a fin de razonar con el conocimiento que tienen.\cite{Samper} \\ 
+La función de un sistema experto es desarrollar trabajos similares a los que desarrollaría un especialista en un área determinada, que denominaremos dominio. La idea no es sustituir a los expertos, sino que estos sistemas sirvan de apoyo a los especialistas en un dominio de aplicación específico.
+Los conocimientos que un sistema experto trata de modelar, son las deducciones que un experto utiliza en su proceso de diagnóstico.\\
+
+\section{Estado de la Cuestion}
+
+\section{Problema Planteado}
+\subsection{Eleccion del dominio de aplicacion}
+Iniciaremos analizando el ámbito de un sistema experto, dado que si un problema está adecuadamente resuelto por métodos tradicionales como la programación lineal, es en vano intentar una metodología de Sistema Experto. Por el contrario, si un problema no está bien resuelto, o deben considerarse cuantiosos parámetros de naturaleza simbólica que son difíciles de tener en cuenta en un modelo numérico, entonces se puede percibir que sería correcto aplicar una metodología de Sistema Experto.\\
+Para realizar este tipo de sistemas es siempre necesario contar con una persona a la cual se pueda considerar un experto en el área, en este caso se trata de un golfista semi profesional y experimentado Caddy. Será el, quien nos nutra del conocimiento necesario para realizar la base de conocimiento necesaria para resolver el problema planteado.\\
+
+\section{Solucion Propuesta}
+\subsection{Elección del palo}
+Cuando el usuario, jugador de golf, en cuestión se encuentra en una posición de la cancha, listo para efectuar un tiro, el experto es quien aconsejara al usuario, con que palo es mejor efectuar dicho tiro. El experto escoge el palo adecuado en función de varios factores, los cuales afectan su decisión para lograr un mejor tiro.\\
+	Como existen distintas técnicas de juego, nuestro caddy experto tomará un aproach no conservador, es decir que siempre aconsejara el uso de un palo mediante el cual el usuario sea capaz de llegar al hoyo.
+	
+\subsection{Retroalimentación}
+Como se trata de un deporte, donde el SE solo aconsejara al usuario con que palo tirar, y sera este al fin de cuentas quien realice el tiro, el SE debera ser constantemente alimentado con las estadisticas de tiro del jugador. Esto hara que las próximas decisiones tomadas por el SE tengan una mayor base de conocimiento con las cuales trabajar.\\
+ 
+\section{Caracterizacion del problema}
+\subsection{Participantes}
+\textbf{Usuario :} Será el jugador de golf, el cual consulta a su caddy con que palo tirar previo a cada tiro.\\
+\textbf{Caddy :} Sera el SE, que tomara en cuenta todos los factores necesarios para aconsejar al jugador de la mejor manera.\\
+
+\subsection{Modelación del conocimiento}
+Para este problema tenemos definido el siguiente conocimiento:\\
+\begin{itemize}
+	\item Factores :
+	\\
+	\begin{itemize}
+    \item \textbf{DIST:} \textit{Distancia del jugador al hoyo.}
+    \item \textbf{WIND:} \textit{Velocidad de viento (Positivo viento a favor, Negativo viento en contra).}
+    \item \textbf{GREEN:} \textit{Verdadero si se encuentra dentro del Green.}
+    \item \textbf{SAND:} \textit{Verdadero si se encuentra en una trampa de arena.}
+    \item \textbf{TEE:} \textit{Verdadero si se encuentra en el tee de salida.}\\
+	\end{itemize}
+	
+  \item Palos :
+	\\
+	\begin{itemize}
+    \item \textbf{H3:} \textit{Hierro número 3.}
+    \item \textbf{H4:} \textit{Hierro número 4.}
+    \item \textbf{H5:} \textit{Hierro número 5.}
+    \item \textbf{H6:} \textit{Hierro número 6.}
+    \item \textbf{H7:} \textit{Hierro número 7.}
+    \item \textbf{H8:} \textit{Hierro número 8.}
+    \item \textbf{H9:} \textit{Hierro número 9.}
+    \item \textbf{M1:} \textit{Madera 1.}
+    \item \textbf{M3:} \textit{Madera 3.}
+    \item \textbf{M5:} \textit{Madera 5.}
+    \item \textbf{S:} \textit{Sand.}
+    \item \textbf{P:} \textit{Putter.}\\
+  \end{itemize}
+\item Distancias:
+\\
+  \begin{itemize}
+    \item \textbf{DH3:} \textit{Distancia con Hierro número 3.}
+    \item \textbf{DH4:} \textit{Distancia con Hierro número 4.}
+    \item \textbf{DH5:} \textit{Distancia con Hierro número 5.}
+    \item \textbf{DH6:} \textit{Distancia con Hierro número 6.}
+    \item \textbf{DH7:} \textit{Distancia con  Hierro número 7.}
+    \item \textbf{DH8:} \textit{Distancia con Hierro número 8.}
+    \item \textbf{DH9:} \textit{Distancia con Hierro número 9.}
+    \item \textbf{DM1:} \textit{Distancia con Madera 1.}
+    \item \textbf{DM3:} \textit{Distancia con Madera 3.}
+    \item \textbf{DM5:} \textit{Distancia con Madera 5.}
+   \end{itemize}
+\end{itemize}
+
+Cabe destacar que en esta resolución del problema, no se tienen en cuenta todos los palos posibles sino aquellos mas usados y por lo tanto presentes en el bolso de cualquier golfista.\\
+\subsection{Conjunto de reglas}
+Este es el conjunto de reglas que se aplicara para la eleccion del palo, en el orden dado:
+\begin{itemize}
+
+	\item Si GREEN $\Rightarrow$ P 
+	
+	\item Si SAND $\Rightarrow$ S
+	
+	\item Si TEE $\Rightarrow$ M1 
+	
+	\item Si DIST + WIND $\leq$ DH3 $\Rightarrow$ H3 
+	
+	\item Si DIST + WIND $\leq$ DH4 $\Rightarrow$ H4 
+	
+	\item Si DIST + WIND $\leq$ DH5 $\Rightarrow$ H5 
+	
+	\item Si DIST + WIND $\leq$ DH6 $\Rightarrow$ H6 
+	
+	\item Si DIST + WIND $\leq$ DH7 $\Rightarrow$ H7 
+	
+	\item Si DIST + WIND $\leq$ DH8 $\Rightarrow$ H8 
+	
+	\item Si DIST + WIND $\leq$ DH9 $\Rightarrow$ H9 
+	
+	\item Si DIST + WIND $\leq$ DM2 $\Rightarrow$ M2
+	
+	\item Si DIST + WIND $\leq$ DM3 $\Rightarrow$ M3
+	
+	\item Si “ninguno de los anteriores” $\Rightarrow$ M1
+	
+\end{itemize}
+
+
+\subsection{Hipostesis}
+
+Para la resolución del problema se considerarán las siguientes hipótesis con respecto a los parámetros de entrada:\\
+\begin{itemize}
+	\item Si SAND o TEE $\Rightarrow$ GREEN = false.
+	\item Si GREEN o SAND $\Rightarrow$ TEE = false.
+	\item Si GREEN o SAND o TEE $\Rightarrow$ WIND = 0 
+	\item Si GREEN o SAND o TEE $\Rightarrow$ DIST = 0.
+	\item WIND es un integer en el rango (-10, 10).
+	\item DIST es siempre un integer positivo.
+	\item Las distancias con cada palo se actualizarán en función del jugador.
+	\item No puede existir ningun palo cuya distacia sea $\leq$ 20
+\end{itemize}
+
+
+\section{Concluciones}
+
+\section{Futuras Lineas de investigacion}
+
+
+
+\begin{thebibliography}{7}
+
+\bibitem{Samper} SAMPER Márquez, Juan José. Sistemas Expertos: El conocimiento al poder.
+
+\end{thebibliography}
+
+
+\section*{Apendice: Glosario de terminos}
+Distintos terminos utilizados por el experto para la resolucion de este problema.\\
+\textbf{Caddy:} \textit{Persona que asiste a un golfista durante la práctica de su deporte. La asistencia proporcionada por el caddie incluye llevar la bolsa de palos del jugador, asesorarle sobre las condiciones de juego de la cancha, hacer recomendaciones sobre el palo a elegir para obtener una distancia o tipo de golpe deseados y dar apoyo moral al golfista.}\\
+\textbf{Green:}  \textit{Una zona delimitada de unos 550 m² en promedio, en la que el terreno está muy bien alisado y la hierba es fina y muy corta, de 2,5 a 3,2 mm de altura, donde se encuentra el hoyo.\\
+Tee de Salida: Es un pedazo de cancha más elevada desde donde comienza el juego.}\\
+\textbf{Hierros:} \textit{Son los palos utilizados en el juego, excepto en el green y trampas de arena. Están numerados del 3 al 9.}\\
+\textbf{Madera:} \textit{Estos palos son más largos y potentes que los Hierros y están numerados como 1, 3 y 5.}\\
+\textbf{Sand:} \textit{Este palo se utiliza para salir de las trampas de arena.}\\
+\textbf{Putter:} \textit{Es un palo que se utiliza exclusivamente cuando la bola está en el green.}
+
+\end{document}
