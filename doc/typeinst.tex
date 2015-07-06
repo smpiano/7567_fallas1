@@ -1,27 +1,25 @@
-
-%%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% This is the LaTeX source for the instructions to authors using
-% the LaTeX document class 'llncs.cls' for contributions to
-% the Lecture Notes in Computer Sciences series.
-% http://www.springer.com/lncs       Springer Heidelberg 2006/05/04
-%
-% It may be used as a template for your own input - copy it
-% to a new file with a new name and use it as the basis
-% for your article.
-%
-% NB: the document class 'llncs' has its own and detailed documentation, see
-% ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \documentclass[runningheads,a4paper]{llncs}
 
 \usepackage{amssymb}
 \setcounter{tocdepth}{3}
 \usepackage{graphicx}
+\usepackage{caption}
+\usepackage{placeins}
+
+% Soporte para el lenguaje español
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\DeclareUnicodeCharacter{B0}{\textdegree}
 \usepackage[spanish]{babel}
+
+% Soporte para codigo
+\usepackage{minted}
+
+\usepackage{color}
+
+% Codigo fuente embebido
+\usepackage{listings}
 
 \usepackage{url}
 \urldef{\mailsa}\path|pnavarro@fi.uba.ar,|
@@ -46,7 +44,7 @@
 % their surnames. This ensures that the names appear correctly in
 % the running heads and the author index.
 %
-\author{Patricio Navarro\and Alex Ingberg\and Matias Piano}
+\author{Patricio Navarro\and Alex Ingberg\and Sergio Matias Piano}
 %
 \authorrunning{Sistema Experto para Caddy de Golf}
 % (feature abused for this document to repeat the title also on left hand pages)
@@ -212,8 +210,10 @@ Para la resolución del problema se considerarán las siguientes hipótesis con 
 
 \end{thebibliography}
 
+\part{Apéndice}
+\appendix
 
-\section*{Apéndice: Glosario de términos}
+\section{Apéndice: Glosario de términos}
 Distintos términos utilizados por el experto para la resolución de este problema.\\
 \textbf{Caddy:} \textit{Persona que asiste a un golfista durante la práctica de su deporte. La asistencia proporcionada por el Caddy incluye llevar la bolsa de palos del jugador, asesorarle sobre las condiciones de juego de la cancha, hacer recomendaciones sobre el palo a elegir para obtener una distancia o tipo de golpe deseados y dar apoyo moral al golfista.}\\
 \textbf{Green:}  \textit{Una zona delimitada de unos 550 m² en promedio, en la que el terreno está muy bien alisado y la hierba es fina y muy corta, de 2,5 a 3,2 mm de altura, donde se encuentra el hoyo.\\
@@ -222,5 +222,13 @@ Tee de Salida: Es un pedazo de cancha más elevada desde donde comienza el juego
 \textbf{Madera:} \textit{Estos palos son más largos y potentes que los Hierros y están numerados como 1, 3 y 5.}\\
 \textbf{Sand:} \textit{Este palo se utiliza para salir de las trampas de arena.}\\
 \textbf{Putter:} \textit{Es un palo que se utiliza exclusivamente cuando la bola está en el green.}
+
+\clearpage
+\section{Código fuente}\label{sec:source}
+\clearpage
+
+\inputminted[linenos, numbersep=5pt, tabsize=4, frame=lines, label=core.clj]{clojure}{../golf-proximo-tiro/src/golf_proximo_tiro/core.clj}
+\inputminted[linenos, numbersep=5pt, tabsize=4, frame=lines, label=core.clj]{clojure}{../golf-proximo-tiro/src/golf_proximo_tiro/main.clj}
+
 
 \end{document}
