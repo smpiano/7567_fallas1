@@ -14,7 +14,7 @@
 \usepackage[spanish]{babel}
 
 % Soporte para codigo
-\usepackage{minted}
+\usepackage{listings}
 
 \usepackage{color}
 
@@ -355,6 +355,29 @@ Para este problema tenemos definido el siguiente conocimiento:\\
 
 \end{itemize}
 
+\section{Código fuente}
+
+  El codigo se generó en función a la información disponible.\cite{source}\\
+
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\lstset{%
+  title=\lstname,
+  language=,
+  basicstyle=\footnotesize,
+  showspaces=false,
+  showstringspaces=false,
+  breaklines=true,
+  commentstyle=\color{gray},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=5pt,
+  extendedchars=\true,
+  inputencoding=utf8
+}
+
+\lstinputlisting[linewidth=350pt,name=core.clj]{../golf-proximo-tiro/src/golf_proximo_tiro/core.clj}
+
+\lstinputlisting[linewidth=350pt,name=main.clj]{../golf-proximo-tiro/src/golf_proximo_tiro/main.clj}
 
 \section{Conclusiones}
 
@@ -438,6 +461,10 @@ Para este problema tenemos definido el siguiente conocimiento:\\
   \bibitem{EC7} R. Aughey, "Australian Football Player Work Rate,"
     In-ternational Journal of Sports Physiology and Perform-ance, Vol. 5, No.
     3, 2010, pp. 394-405.
+    
+  \bibitem{source} El código generó en función de la información extraída
+    de la página
+    \url{http://www.golfwrx.com/62549/how-far-should-you-hit-your-golf-clubs/}
 
 \end{thebibliography}
 
@@ -471,15 +498,6 @@ Para este problema tenemos definido el siguiente conocimiento:\\
   
   \textbf{Putter:} \textit{Es un palo que se utiliza exclusivamente cuando la
   bola está en el green.}
-
-\clearpage
-
-\section{Código fuente}\label{sec:source}
-
-\clearpage
-
-\inputminted[linenos, numbersep=2pt, tabsize=2, frame=lines, label=core.clj]{clojure}{../golf-proximo-tiro/src/golf_proximo_tiro/core.clj}
-\inputminted[linenos, numbersep=2pt, tabsize=2, frame=lines, label=core.clj]{clojure}{../golf-proximo-tiro/src/golf_proximo_tiro/main.clj}
 
 
 \end{document}
