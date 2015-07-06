@@ -31,7 +31,7 @@ $ lein repl
 $ lein run
 ```
 
-Me funciona con éste por el soporte en stdin
+Me funciona con éste por el soporte en stdin (con version lein2 no es necesario, funca el de arriba)
 ```
 $ lein trampoline run
 ```
